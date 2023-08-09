@@ -5,11 +5,20 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "start": "electron app.js",
+    "start:dev": "concurrently \"vue-cli-service serve --mode development\" \"wait-on http://localhost:8080 && electron app.js --dev\""
   },
   "dependencies": {
+    "@mdi/font": "^7.2.96",
+    "axios": "^1.4.0",
+    "concurrently": "^8.2.0",
     "core-js": "^3.8.3",
-    "vue": "^3.2.13"
+    "electron": "^25.3.1",
+    "electron-store": "^8.1.0",
+    "vue": "^3.2.13",
+    "vuetify": "^3.3.9",
+    "wait-on": "^7.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
@@ -19,6 +28,11 @@
     "@vue/cli-service": "~5.0.0",
     "eslint": "^7.32.0",
     "eslint-plugin-vue": "^8.0.3"
+  },
+  "browser": {
+    "fs": "false",
+    "os": "false",
+    "path": "false"
   },
   "eslintConfig": {
     "root": true,
